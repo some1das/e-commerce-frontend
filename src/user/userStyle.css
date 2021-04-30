@@ -1,0 +1,125 @@
+#signin-form{
+    height: 100vh;
+}
+#signup-form{
+    height: 100vh;
+
+}
+/* .............style for verification................ */
+.user-verification-form-body{
+    width: 100vw;
+    height: 100vh;
+    background-color:#35BDD0;
+    color: black;
+
+}
+.user-verification-form-body .user-verifiction-form{
+    height: 30vw;
+    width: 25vw;
+    /* border: 1px black solid; */
+    margin: auto;
+    position: relative;
+    top: 70px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.user-verification-form-body .user-verifiction-form input{
+    height: 30px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    position: relative;
+    top: 100px;
+    
+}
+.user-verification-form-body .user-verifiction-form button{
+    border-style: none;
+    background-color: green;
+    color: white;
+    position: relative;
+    top: 100px;
+}
+@media(max-width:460px)
+{
+    .user-verification-form-body{
+        width: 99vw;
+        height: 100vh;
+        background-color:#35BDD0;
+        color: black;
+        overflow-x: hidden;
+        margin: 0px;
+    
+    }
+    .user-verification-form-body .user-verifiction-form{
+        height: 49vh;
+        width: 80vw;
+        /* border: 1px black solid; */
+        margin: auto;
+        position: relative;
+        top: 70px;
+        padding: 15px;
+        text-align: center;
+        border-radius: 20px;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+    }
+    .user-verification-form-body .user-verifiction-form input{
+        height: 30px;
+        width: 140px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        position: relative;
+        top: 100px;
+        
+    }
+    .user-verification-form-body .user-verifiction-form button{
+        border-style: none;
+        background-color: green;
+        color: white;
+        position: relative;
+        top: 100px;
+    }
+}
+.user-verification-component{
+    width: 100vw;
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+    background-color:#35BDD0;
+}
+.success-message-user-verification{
+    background-color: white;
+    height: 300px;
+    width: 60vw;
+    color: black;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: auto;
+    position: relative;
+    top: 50px;
+    padding: 10px;
+    padding-top: 30px;
+}
+@media(max-width:460px){
+    .success-message-user-verification{
+        background-color: white;
+        font-size: 30px;
+        height: 300px;
+        width: 80vw;
+        color: black;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin: auto;
+        position: relative;
+        top: 90px;
+        padding: 10px;
+        padding-top: 30px;
+    }
+}

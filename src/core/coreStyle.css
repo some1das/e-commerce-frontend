@@ -1,0 +1,246 @@
+.base-container {
+  margin: 0px;
+  padding: 0px;
+  background-color: white;
+  color: black;
+  overflow-x: hidden;
+}
+.base-heading {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+.nav-bar {
+  list-style: none;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  background-color: rgb(40, 56, 56);
+  margin: 0px;
+  padding: 0px;
+}
+.nav-bar .nav-item {
+  display: inline-block;
+}
+#custom-cart {
+  background-color: red;
+  margin: 0px;
+  padding: 0px;
+}
+#custom-cart-product {
+  background-color: white;
+}
+#custom-cart-details {
+  background-color: white;
+  height: 100vh;
+}
+#custom-cart-product-item {
+  border: 3px black solid;
+}
+.product-card {
+  background-color: white;
+  margin: 0px;
+  padding: 0px;
+  border: 0.5px solid black;
+  border-radius: 10px;
+}
+.product-card:hover {
+  border: 2px solid black;
+}
+.product-card-title {
+  background-color: white;
+  text-align: center;
+}
+#footer {
+  position: relative;
+  bottom: 0px;
+}
+.footer-contents-row {
+  float: left;
+  height: auto;
+  padding: 12px;
+}
+.footer-contents-col-1 {
+  width: 30vw;
+  float: left;
+  margin-left: 20px;
+}
+.footer-contents-col-2 {
+  float: left;
+
+  width: 30vw;
+}
+.footer-contents-col-3 {
+  float: left;
+
+  width: 30vw;
+}
+/* ...............products at home page-------------------------- */
+.products-at-home {
+  width: 23vw;
+  height: 30vw;
+  margin-left: 15px;
+}
+#home-loader{
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  
+}
+#home-loader-inside{
+  position: absolute;
+  top: 50vh;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+  .products-at-home {
+    width: 90vw;
+    height: 120vw;
+
+    font-size: 20px;
+  }
+  .footer-contents-row {
+    height: auto;
+    width: 100vw;
+    padding: 12px;
+    float: none;
+  }
+  .footer-contents-col-1 {
+    width: 80vw;
+    float: none;
+  }
+  .footer-contents-col-2 {
+    width: 80vw;
+  }
+  .footer-contents-col-3 {
+    float: none;
+
+    width: 80vw;
+  }
+  #footer{
+    display: none;
+  }
+}
+/* ............responsive------------------------------- */
+@media only screen and (max-width: 600px) {
+  #porduct-card {
+    margin: auto;
+  }
+}
+/* .................Order place......................... */
+.place-order-body{
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+}
+.form-for-address{
+  height: auto;
+  width: 30vw;
+  border: black 3px solid;
+  margin: auto;
+  position: relative;
+  top: 100px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .form-for-address{
+    height: auto;
+    width: 95vw;
+    border: black 3px solid;
+    border-radius: 10px;
+    margin: auto;
+    position: relative;
+    top: 100px;
+
+  }
+}
+/* ...........all cart styles..................... */
+.cart-product-container{
+  height: auto;
+  width: 97vw;
+  display: flex;
+  padding: 10px;
+}
+.cart-product-container .card-in-cart{
+  
+  width: 20vw;
+  margin: auto;
+
+}
+@media(max-width:390px)
+{
+  .cart-product-container{
+    height: auto;
+    width: 97vw;
+    display: flex;
+    
+    flex-direction: column;
+  }
+  .cart-product-container .card-in-cart{
+  
+    width: 90vw;
+    margin: auto;
+    margin-top: 10px;
+  
+  }
+}
+/* ...........all cart styles ends here..................... */
+/* ..................address input.................. */
+.form-for-address{
+  background-color: aliceblue;
+  border-radius: 8px;
+  border: none;
+
+
+}
+.form-for-address button{
+  background-color: rgb(12, 209, 235);
+  border: none;
+  color: white;
+}
+.place-order-body{
+  background-color:#03C6C7;
+}
+/* ....................after proceed...................... */
+.after-proceed{
+  width: 30vw;
+  height: 50vh;
+  margin: auto;
+  position: relative;
+  top: 100px;
+  background-color: aliceblue;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.after-proceed button{
+  border: none;
+  background-color: #03C6C7;
+  color: white;
+  
+}
+@media(max-width:400px)
+{
+  .after-proceed{
+    width: 90vw;
+    height: 50vh;
+    margin: auto;
+    position: relative;
+    top: 100px;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  .after-proceed button{
+    border: none;
+    background-color: #03C6C7;
+    color: white;
+    
+  }
+}

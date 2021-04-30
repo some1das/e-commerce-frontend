@@ -1,0 +1,21 @@
+.btn,
+.jumbotron,
+.nav :hover {
+    border-radius :0px;
+}
+body{
+    background-color: #ffffff;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+footer{
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 0px;
+    padding: 0px;
+    overflow-y: hidden;
+
+}
