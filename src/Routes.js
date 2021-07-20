@@ -12,10 +12,12 @@ import ManageCategory from "./admin/ManageCategory";
 import CreateProduct from "./admin/CreateProduct";
 import ManageProduct from "./admin/ManageProduct";
 import UpdateProduct from "./admin/UpdateProduct";
-import Cart from "./core/Cart";
+import Cart from "./core/cart/Cart";
 import PlaceOrder from "./core/PlaceOrder";
 import ManageOrders from "./admin/ManageOrders";
 import UserVerification from "./user/UserVerification";
+import MyOrders from "./orders/MyOrders";
+import MyShoppingHistory from "./orders/MyShoppingHistory";
 
 function routes() {
   return (
@@ -28,6 +30,8 @@ function routes() {
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/order/place" component={PlaceOrder} />
           <Route exact path="/otp/verification" component={UserVerification} />
+          <Route exact path="/orders/current" component={MyOrders} />
+          <Route exact path="/orders/history" component={MyShoppingHistory} />
           <PrivateRoute
             exact
             path="/user/dashboard"
@@ -63,7 +67,7 @@ function routes() {
             path="/admin/product/update/:productId"
             component={UpdateProduct}
           />
-           <AdminRoute
+          <AdminRoute
             exact
             path="/admin/orders"
             component={ManageOrders}

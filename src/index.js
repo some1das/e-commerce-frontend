@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import Routes from './Routes'
 import App from './App';
 import routes from './Routes';
-
+import { CartContextProvider } from "./context/CartContext"
 
 ReactDOM.render(
-  
-    <Routes/>
+  <CartContextProvider>
+    <Routes />
+  </CartContextProvider>
+
   ,
   document.getElementById('root')
 );

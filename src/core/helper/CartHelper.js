@@ -1,3 +1,5 @@
+
+
 export const addItemToCart = (item, next) => {
   var cart = [];
   if (typeof window != undefined) {
@@ -21,26 +23,26 @@ export const loadCart = () => {
   }
 };
 
-export const removeOneItem=(productId)=>{
-    let cart=[]
-    if (typeof window != undefined) {
-        if (localStorage.getItem("cart")) {
-          cart= JSON.parse(localStorage.getItem("cart"));
-        }
-        cart.map((product,i)=>{
-            if(product._id===productId)
-            {
-                cart.splice(i,1)
-            }
-        })
-        localStorage.setItem("cart", JSON.stringify(cart));
-      }
-      return cart; 
-}
-export const cartEmpty=next=>{
-    if(typeof window!=undefined)
-    {
-        localStorage.removeItem("cart")
-        next()
+export const removeOneItem = (productId, cartItems, setCartItems) => {
+  let cart = []
+  if (typeof window != undefined) {
+    if (localStorage.getItem("cart")) {
+      cart = JSON.parse(localStorage.getItem("cart"));
     }
+    cart.map((product, i) => {
+      if (product._id === productId) {
+        cart.splice(i, 1)
+      }
+    })
+    localStorage.setItem("cart", JSON.stringify(cart));
+    setCartItems(cart)
+    // console.log(cartItems)
+  }
+  return cart;
+}
+export const cartEmpty = next => {
+  if (typeof window != undefined) {
+    localStorage.removeItem("cart")
+    next()
+  }
 }

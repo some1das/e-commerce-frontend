@@ -22,6 +22,27 @@
 .nav-bar .nav-item {
   display: inline-block;
 }
+.nav-bar ul {
+  padding-left: 0px;
+}
+.nav-bar ul li {
+  font-size: 20px;
+}
+
+/* styles for cart is here */
+#cart {
+}
+#cart .item-cnt {
+  font-size: 12px;
+  background-color: red;
+  width: 18px;
+  color: white;
+  border-radius: 50%;
+  position: relative;
+  left: 17px;
+  top: 12px;
+  text-align: center;
+}
 #custom-cart {
   background-color: red;
   margin: 0px;
@@ -81,13 +102,12 @@
   height: 30vw;
   margin-left: 15px;
 }
-#home-loader{
+#home-loader {
   height: 100vh;
   width: 100vw;
   background-color: white;
-  
 }
-#home-loader-inside{
+#home-loader-inside {
   position: absolute;
   top: 50vh;
 }
@@ -120,7 +140,7 @@
 
     width: 80vw;
   }
-  #footer{
+  #footer {
     display: none;
   }
 }
@@ -131,12 +151,12 @@
   }
 }
 /* .................Order place......................... */
-.place-order-body{
+.place-order-body {
   height: 100vh;
   width: 100vw;
   background-color: white;
 }
-.form-for-address{
+.form-for-address {
   height: auto;
   width: 30vw;
   border: black 3px solid;
@@ -148,7 +168,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .form-for-address{
+  .form-for-address {
     height: auto;
     width: 95vw;
     border: black 3px solid;
@@ -156,58 +176,50 @@
     margin: auto;
     position: relative;
     top: 100px;
-
   }
 }
 /* ...........all cart styles..................... */
-.cart-product-container{
+.cart-product-container {
   height: auto;
   width: 97vw;
   display: flex;
   padding: 10px;
 }
-.cart-product-container .card-in-cart{
-  
+.cart-product-container .card-in-cart {
   width: 20vw;
   margin: auto;
-
 }
-@media(max-width:390px)
-{
-  .cart-product-container{
+@media (max-width: 390px) {
+  .cart-product-container {
     height: auto;
     width: 97vw;
     display: flex;
-    
+
     flex-direction: column;
   }
-  .cart-product-container .card-in-cart{
-  
+  .cart-product-container .card-in-cart {
     width: 90vw;
     margin: auto;
     margin-top: 10px;
-  
   }
 }
 /* ...........all cart styles ends here..................... */
 /* ..................address input.................. */
-.form-for-address{
+.form-for-address {
   background-color: aliceblue;
   border-radius: 8px;
   border: none;
-
-
 }
-.form-for-address button{
+.form-for-address button {
   background-color: rgb(12, 209, 235);
   border: none;
   color: white;
 }
-.place-order-body{
-  background-color:#03C6C7;
+.place-order-body {
+  background-color: #03c6c7;
 }
 /* ....................after proceed...................... */
-.after-proceed{
+.after-proceed {
   width: 30vw;
   height: 50vh;
   margin: auto;
@@ -218,15 +230,13 @@
   border-radius: 12px;
 }
 
-.after-proceed button{
+.after-proceed button {
   border: none;
-  background-color: #03C6C7;
+  background-color: #03c6c7;
   color: white;
-  
 }
-@media(max-width:400px)
-{
-  .after-proceed{
+@media (max-width: 400px) {
+  .after-proceed {
     width: 90vw;
     height: 50vh;
     margin: auto;
@@ -236,11 +246,10 @@
     padding: 20px;
     border-radius: 12px;
   }
-  
-  .after-proceed button{
+
+  .after-proceed button {
     border: none;
-    background-color: #03C6C7;
+    background-color: #03c6c7;
     color: white;
-    
   }
 }

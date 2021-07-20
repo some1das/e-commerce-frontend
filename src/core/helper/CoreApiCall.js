@@ -1,11 +1,11 @@
 import { API } from "../../backend";
 
-export const getAllProducts=()=>{
-    return fetch(`${API}/products`,{
-        method:"GET"
-    }).then(response=>{
+export const getAllProducts = () => {
+    return fetch(`${API}/products`, {
+        method: "GET"
+    }).then(response => {
         return response.json()
-    }).catch((err)=>{
+    }).catch((err) => {
         return console.log(err)
     })
 }
