@@ -1,0 +1,56 @@
+.edit-order-body {
+  height: 100vh;
+
+  width: 100vw;
+}
+.back-to-manage-order {
+  background-color: green;
+  color: white;
+}
+.back-to-manage-order:hover {
+  background-color: rgb(10, 87, 10);
+  color: white;
+  cursor: pointer;
+}
+.edit-order-body .user-detail {
+  width: 400px;
+  height: auto;
+  float: left;
+
+  padding: 20px;
+  box-shadow: 5px 5px 5px 5px rgb(192, 191, 191);
+  border-radius: 10px;
+  margin: 10px;
+}
+.edit-order-body .order-status {
+  height: 300px;
+  float: left;
+  width: 500px;
+  box-shadow: 5px 5px 5px 5px rgb(179, 179, 179);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+.edit-order-body .order-status span {
+  background-color: green;
+  color: white;
+  padding: 3px;
+  border-radius: 6px;
+}
+.edit-order-body .order-status .status-control {
+  background-color: rgb(219, 12, 109);
+  height: 200px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.edit-order-body .order-status .status-control span {
+  margin: 10px;
+}
+.edit-order-body .order-status .status-control span:hover {
+  margin: 10px;
+  color: green;
+  background-color: white;
+  cursor: pointer;
+}
