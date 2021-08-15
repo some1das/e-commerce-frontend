@@ -12,13 +12,72 @@
   padding: 20px;
   padding-top: 32px;
 }
-.order-card .col {
+.order-card .col .cancel-order {
+  background-color: red;
 }
+
 .order-card .col span {
   background-color: green;
   padding-left: 10px;
   padding-right: 10px;
   color: white;
+  border-radius: 10px;
+}
+/* cancel order popup design  */
+.pop-up {
+  height: 300px;
+  width: 500px;
+  box-shadow: 5px 5px 5px 3px rgb(184, 184, 184);
+  border-radius: 10px;
+  padding: 20px;
+  margin: auto;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.pop-up .question {
+  font-size: 30px;
+}
+.pop-up .options {
+  position: relative;
+  top: 60px;
+  display: flex;
+}
+.pop-up .options .yes {
+  font-size: 30px;
+  width: 90px;
+  height: 40px;
+  background-color: green;
+  margin: auto;
+  color: white;
+  border-radius: 10px;
+}
+.pop-up .options .no {
+  font-size: 30px;
+  width: 90px;
+  height: 40px;
+  background-color: rgb(134, 9, 9);
+  margin: auto;
+  color: white;
+  border-radius: 10px;
+}
+.pop-up .options .yes:hover {
+  font-size: 30px;
+  width: 90px;
+  height: 40px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid green;
+  margin: auto;
+  color: green;
+  border-radius: 10px;
+}
+.pop-up .options .no:hover {
+  font-size: 30px;
+  width: 90px;
+  height: 40px;
+  background-color: rgb(255, 255, 255);
+  margin: auto;
+  border: 1px solid rgb(126, 8, 77);
+  color: rgb(255, 4, 4);
   border-radius: 10px;
 }
 

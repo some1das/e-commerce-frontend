@@ -1,18 +1,37 @@
 import React, { useState, useEffect } from 'react'
 import { isAuthenticated } from '../auth/helper'
 import Base from '../core/helper/Base'
-import { getOrdersByUserId, getProductsByIds } from './Helper'
+import { cancelOrderAPICall, getOrdersByUserId, getProductsByIds } from './Helper'
 import "./orderStyle.css"
 function MyOrders() {
     const [myOrders, setMyOrders] = useState([])
     const [clickedOrder, setClickedOrder] = useState({})
     const [isClicked, setIsClicked] = useState(false)
+    const [popup, setPopup] = useState(false)
     const [products, setProducts] = useState([])
     useEffect(() => {
         getOrdersByUserId(isAuthenticated().user._id).then((res) => {
             setMyOrders(res)
         })
     }, [])
+    const cancelOrder = (orderId) => {
+        cancelOrderAPICall(isAuthenticated().user._id, isAuthenticated().token, clickedOrder._id)
+            .then((res) => {
+                console.log(res)
+            })
+    }
+    const areYouSurePopup = (orderId) => {
+        return (
+            <div className="pop-up">
+                <div className="question">Are you sure?</div>
+                <div className="options">
+                    <div className="yes" onClick={(orderId) => { cancelOrder(orderId) }}>Yes</div>
+                    <div className="no" onClick={() => { setPopup(false) }}>No</div>
+                </div>
+
+            </div>
+        )
+    }
     const showOrdersCartwise = () => {
         return <div className="order-section">
             {
@@ -93,6 +112,11 @@ function MyOrders() {
                         }
                     </span>
                 </div>
+                <div className="col">
+                    <span className="cancel-order" onClick={() => { setPopup(true) }}>
+                        Cancel
+                    </span>
+                </div>
             </div>
             <div className="single-order-products">
                 {
@@ -112,11 +136,14 @@ function MyOrders() {
     return (
         <Base title="" description="">
             {
-                isClicked == false && myOrders && showOrdersCartwise()
+                popup && areYouSurePopup(clickedOrder._id)
+            }
+            {
+                !popup && isClicked == false && myOrders && showOrdersCartwise()
 
             }
             {
-                isClicked == true && showSingleOrderDetails(clickedOrder)
+                !popup && isClicked == true && showSingleOrderDetails(clickedOrder)
             }
         </Base>
     )

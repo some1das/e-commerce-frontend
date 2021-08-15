@@ -30,3 +30,21 @@ export const getProductsByIds = (ids) => {
         console.log(err)
     })
 }
+
+export const cancelOrderAPICall = (userId, token, orderId) => {
+    return fetch(`${API}/order/${orderId}/cancel/${userId}`, {
+        method: "PUT",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({
+            orderId: orderId
+        })
+    }).then((res) => {
+        return res.json()
+    }).catch((err) => {
+        console.log(err)
+    })
+}
