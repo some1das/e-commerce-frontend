@@ -19,6 +19,7 @@ import UserVerification from "./user/UserVerification";
 import MyOrders from "./orders/MyOrders";
 import MyShoppingHistory from "./orders/MyShoppingHistory";
 import EditOrder from "./admin/helper/EditOrder";
+import ManageUsers from "./admin/ManageUsers";
 
 function routes() {
   return (
@@ -77,6 +78,11 @@ function routes() {
             exact
             path="/admin/order/edit/:orderId"
             component={EditOrder}
+          />
+          <AdminRoute
+            exact
+            path="/admin/manage/usres/"
+            component={ManageUsers}
           />
 
         </Switch>

@@ -62,20 +62,20 @@ export const getAllTheProducts = () => {
 //delete a products
 
 export const deleteProduct = (userId, token, productId) => {
-    return fetch(`${API}/product/${productId}/${userId}/`, {
-      method: "DELETE",
-      headers: {
-        Accept: "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      
+  return fetch(`${API}/product/${productId}/${userId}/`, {
+    method: "DELETE",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+
+  })
+    .then((response) => {
+      return response.json();
     })
-      .then((response) => {
-        return response.json();
-      })
-      .catch((err) => console.log(err));
-  };
-  
+    .catch((err) => console.log(err));
+};
+
 
 //get a product
 export const getProduct = (productId) => {
@@ -103,3 +103,36 @@ export const updateProduct = (productId, userId, token, product) => {
     })
     .catch(err => console.log(err));
 };
+
+export const getAllUsers = (userId, token) => {
+  return fetch(`${API}/users/all/${userId}`, {
+    method: "GET",
+    headers: {
+      // "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+
+    }
+  }).then((res) => {
+    return res.json()
+  }).catch((err) => {
+    console.log(err)
+  })
+}
+export const changeRoleAPI = (userId, token, adminId, role) => {
+  return fetch(`${API}/user/changeRole/${adminId}`, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      role: role,
+      userId: userId
+    })
+  }).then((res) => {
+    return res.json()
+  }).catch((err) => {
+    return console.log(err)
+  })
+}

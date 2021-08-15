@@ -1,0 +1,38 @@
+.manage-users-body {
+  width: 100vw;
+}
+.manage-users-body .manage-users-table-head {
+  display: flex;
+  flex-direction: row;
+  background-color: green;
+  color: white;
+}
+.manage-users-body .manage-users-table-head .item {
+  /* margin: auto; */
+  width: 21vw;
+  text-align: center;
+}
+.manage-users-body .manage-users-table-raw {
+  display: flex;
+  flex-direction: row;
+}
+.manage-users-body .manage-users-table-raw .item {
+  /* margin: auto; */
+  width: 21vw;
+  border: 1px solid black;
+  padding: 2px;
+  text-align: center;
+}
+.manage-users-body .manage-users-table-raw .item span {
+  background-color: green;
+  border-radius: 10px;
+  padding: 2px;
+  color: white;
+}
+.manage-users-body .manage-users-table-raw .item span:hover {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2px;
+  color: green;
+  border: 1px solid green;
+}

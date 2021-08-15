@@ -8,12 +8,12 @@ const AdminDashBoard = () => {
       <div className="card">
         <h4 className="card-header bg-dark text-white">manage business</h4>
         <ul className="list-group">
-        <li className="list-group-item">
+          <li className="list-group-item">
             <Link to="/admin/create/category" className="nav-link text-success">
               Create category
             </Link>
           </li>
-        <li className="list-group-item">
+          <li className="list-group-item">
             <Link to="/admin/categories" className="nav-link text-success">
               Manage category
             </Link>
@@ -49,8 +49,21 @@ const AdminDashBoard = () => {
             <span className="badge badge-success bg-success mr-1">email: </span>{email}
           </li>
           <li className="list-group-item bg-white">
+            <span className="badge badge-success bg-success mr-1">
+              <Link to="/admin/manage/usres" style={{ textDecoration: "none", color: "white" }}>
+                Manage users
+              </Link>
+            </span>
+          </li>
+          {/* <li className="list-group-item bg-white">
             <span className="badge badge-success bg-success mr-1">Admin Area </span>
           </li>
+          <li className="list-group-item bg-white">
+            <span className="badge badge-success bg-success mr-1">Admin Area </span>
+          </li>
+          <li className="list-group-item bg-white">
+            <span className="badge badge-success bg-success mr-1">Admin Area </span>
+          </li> */}
         </ul>
       </div>
     );
@@ -65,9 +78,9 @@ const AdminDashBoard = () => {
       description="manage all orders here"
     >
       <div className="admin-home">
-      <div className="admin-home-right">{adminRightSide()}</div>
+        <div className="admin-home-right">{adminRightSide()}</div>
         <div className="admin-home-left">{adminLeftSide()}</div>
-        
+
       </div>
     </Base>
   );
