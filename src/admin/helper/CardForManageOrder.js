@@ -19,7 +19,7 @@ const CardForManageOrder = ({ index, name, email, cost, qty, orderId, address, p
       <div className="col-3">{email}</div>
       <div className="col-2">{cost}</div>
       <div className="col-1">{qty}</div>
-      {console.log("---------" + productIds)}
+      {/* {console.log("---------" + productIds)} */}
       <button className="col-1 bg-info border-0 text-white hover-shadow">
         <Link to={`/admin/order/edit/${orderId}`}>edit</Link>
       </button>

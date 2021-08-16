@@ -6,10 +6,37 @@
 .back-to-manage-order {
   background-color: green;
   color: white;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 20px;
+  margin-top: 40px;
 }
 .back-to-manage-order:hover {
   background-color: rgb(10, 87, 10);
   color: white;
+  cursor: pointer;
+}
+.cancellation-status {
+  padding: 4px;
+  border-radius: 10px;
+  color: white;
+}
+.delete-order {
+  background-color: red;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  top: 100px;
+}
+.delete-order:hover {
+  background-color: white;
+  color: red;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  top: 100px;
+  border: 1px solid red;
   cursor: pointer;
 }
 .edit-order-body .user-detail {
@@ -53,4 +80,28 @@
   color: green;
   background-color: white;
   cursor: pointer;
+}
+.display-products {
+  width: 36vw;
+  /* background-color: yellow; */
+  position: relative;
+  height: 1400px;
+  /* top: 400px; */
+  float: none;
+}
+.display-products .order-list {
+  background-color: yellow;
+}
+.display-products .order-list .details {
+  display: flex;
+  margin: auto;
+}
+.display-products .order-list .details .name {
+  margin: auto;
+}
+.display-products .order-list .details .price {
+  margin: auto;
+}
+.display-products .order-list .details .stock {
+  margin: auto;
 }

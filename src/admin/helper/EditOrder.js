@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import { isAuthenticated } from '../../auth/helper'
-import { changeOrderStatus, getSingleOrder } from './AdminOrderApiCall'
+import { changeOrderStatus, deleteOrderById, getAllTheProductsByIdArray, getSingleOrder } from './AdminOrderApiCall'
 import "./styles/editOrderStyle.css"
-import { Link } from "react-router-dom"
+import { Link, Redirect } from "react-router-dom"
 
 
 
 function EditOrder() {
   const [loading, setLoading] = useState(true)
   const [orderId, setOrderId] = useState("")
+  const [products, setProducts] = useState([])
   const [orderDetails, setOrderDetails] = useState({})
+  const [fetchProductsDetails, setFetchProductsDetails] = useState(false)
+  const [redirectMe, setRedirectMe] = useState(false)
   const showUrl = (cb) => {
     let k = window.location.href
     let Id = k.substring(k.length - 24, k.length)
@@ -26,12 +29,35 @@ function EditOrder() {
   useEffect(() => {
     getSingleOrder(isAuthenticated().user._id, orderId, isAuthenticated().token).then((res) => {
       setOrderDetails(res)
-      setTimeout(() => {
-        setLoading(false)
-      }, 500)
+      // console.log(res)
+
+      setLoading(false)
 
     });
   }, [orderId])
+  useEffect(() => {
+    setTimeout(() => {
+      getAllTheProductsByIdArray(orderDetails.products).then((res) => {
+        setProducts(res)
+        console.log(products)
+      })
+    }, 500)
+  }, [fetchProductsDetails])
+  const deleteOrder = () => {
+    deleteOrderById(orderDetails._id, isAuthenticated().user._id, isAuthenticated().token)
+      .then((res) => {
+        console.log(res)
+        setTimeout(() => {
+          setRedirectMe(true)
+        }, 500)
+      })
+
+
+  }
+  const redirectHandler = () => {
+    return <Redirect to="/admin/orders" />
+  }
+
   if (loading) {
     return (
       <div>
@@ -45,7 +71,18 @@ function EditOrder() {
     let date = `${dateObj.getDate()}/${dateObj.getMonth()}/${dateObj.getFullYear()} -${dateObj.getHours()}:${dateObj.getMinutes()}`
     return (
       <div className="edit-order-body">
-        <span className="back-to-manage-order"><Link to="/admin/orders">Back to manage order</Link></span>
+        {redirectMe && redirectHandler()}
+        <span className="back-to-manage-order">
+          <Link style={{ textDecoration: "none", color: "white" }} to="/admin/orders">
+            Back to manage order
+          </Link>
+        </span>
+        <span className="cancellation-status" style={orderDetails.canceled == 1 ? { backgroundColor: "red" } : { backgroundColor: "green" }}>
+          {orderDetails.canceled == 1 ? "order canceled" : "order is open"}
+        </span>
+        <span onClick={() => { deleteOrder() }} className="delete-order ">
+          Delete order
+        </span>
         <div className="user-detail">
           <div className="details-line">Name:{orderDetails.userName}</div>
           <div className="details-line">Email:{orderDetails.userEmail}</div>
@@ -74,6 +111,27 @@ function EditOrder() {
               <span onClick={() => { changeOrderStatus(orderDetails._id, isAuthenticated().token, isAuthenticated().user._id, 1).then((res) => console.log(res)) }}>shiped</span>
               <span onClick={() => { changeOrderStatus(orderDetails._id, isAuthenticated().token, isAuthenticated().user._id, 0).then((res) => console.log(res)) }}>placed</span>
             </div>
+
+          </div>
+        </div>
+        {/* here we will display products  */}
+        <div className="display-products">
+          <button onClick={() => { setFetchProductsDetails(!fetchProductsDetails) }}>
+            Load products
+          </button>
+          <div className="order-list">
+            {
+              products.length && products.map((p) => {
+                return (
+                  <div className="details">
+                    <div className="name">{p.name}</div>
+                    <div className="price">{p.price}/-</div>
+                    <div className="stock">{p.stock}</div>
+                  </div>
+
+                )
+              })
+            }
           </div>
         </div>
       </div>

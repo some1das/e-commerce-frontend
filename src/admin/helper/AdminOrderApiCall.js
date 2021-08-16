@@ -17,7 +17,7 @@ export const getAllOrders = (userId, token) => {
 }
 
 export const getSingleOrder = (userId, orderId, token) => {
-    console.log(orderId)
+    // console.log(orderId)
     return fetch(`${API}/order/${userId}/${orderId}`, {
         method: "GET",
         headers: {
@@ -62,4 +62,36 @@ export const changeOrderStatus = (orderId, token, userId, status) => {
         return console.log(err)
     })
 
+}
+export const getAllTheProductsByIdArray = (IdArray) => {
+    return fetch(`${API}/products/IdArray`, {
+        method: "POST",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(IdArray)
+    }).then((res) => {
+        return res.json()
+    }).catch((err) => {
+        console.log(err)
+    })
+}
+
+// delete an order 
+export const deleteOrderById = (orderId, userId, token) => {
+    return fetch(`${API}/order/delete/${userId}`, {
+        method: "DELETE",
+        headers: {
+            Authorization: `Bearer ${token}`,
+            Accept: "application/json"
+        },
+        body: JSON.stringify({
+            orderId: orderId
+        })
+    }).then((res) => {
+        return res.json();
+    }).catch((err) => {
+        console.log(err)
+    })
 }
